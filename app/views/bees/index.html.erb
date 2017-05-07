@@ -1,0 +1,9 @@
+<h1> All the Bees </h1>
+
+<% @bees.each do |bee| %>
+<h2> <a href="/bees/<%=bee.id %>"><%= bee.name %> </a> </h2>
+<h3> <%= bee.price %> </h3>
+<img src=<%= bee.image %> width=200px>
+<h3> <%= bee.description %> </h3>
+<% end %>
+

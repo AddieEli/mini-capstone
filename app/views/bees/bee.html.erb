@@ -1,9 +1,10 @@
 <h1> Hello, Let's Buy Bees! </h1>
 
 <% @bee.each do |bee| %>
-  <h2> <%=bee.name %> </h2>
-  <h2> <%=bee.price %> </h2>
-  <h2> <%=bee.image %> </h2><
-  <h2> <%=bee.description %> </h2>
+  <h2> <%= bee.name %> </h2>
+  <h3> <%= bee.price %> </h3>
+  <img src=<%= bee.image %> width=170px>
+  <h3> <%= bee.description %> </h3>
     <br>
+
 <% end %>
