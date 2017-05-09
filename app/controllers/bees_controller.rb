@@ -25,5 +25,31 @@ class BeesController < ApplicationController
                     description: params[:description]
                     )
       bee.save
+      redirect_to "/bees/#{bee.id}"
   end 
+
+  def edit
+    @bee = Bee.find(params[:id])
+  end 
+
+  def update
+    bee = Bee.find(params[:id])
+      bee.assign_attributes(
+                      name: params[:name],
+                      price: params[:price],
+                      image: params[:image],
+                      description: params[:description]
+        )
+      bee.save
+      flash[:success] = "Bee item Successfully Created"
+      redirect_to "/bees/#{bee.id}"
+    end 
+
+    def destroy
+      bee = Bee.find(params[:id])
+      bee.destroy
+      flash[:warning] = "Recipe Destroyed"
+      redirect_to "/"
+    end
+
 end

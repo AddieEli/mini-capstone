@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   post '/bees' => 'bees#create'
 
   get '/bees/:id' => 'bees#show'
+
+  get '/bees/:id/edit' => 'bees#edit'
+  patch '/bees/:id' => 'bees#update'
+
+  delete '/bees:id' => 'bees#destroy'
 end

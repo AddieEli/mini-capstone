@@ -40,7 +40,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
 end
-
+gem 'bootstrap-sass', '~> 3.3.6'
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

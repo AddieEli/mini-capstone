@@ -1,10 +1,9 @@
+ <h2> <%= @bee.name %> </h2>
+ <h2><%= @bee.image %> </h2>
+ <h4> <%= @bee.price %> </h4>
+  <h4> <%= @bee.description %> </h4>
 
 
-<a href="/">HOME</a> 
+<a href="/bees/<%= @bee.id %>/edit">Edit Bee thing</a>
 
-<h2> <%= @bee.name %> </h2>
-<h3> <%= @bee.price %> </h3>
-<img src=<%= @bee.image %> width=170px>
-<h3> <%= @bee.description %> </h3>
-
-<a href="/bees/<%= @bee.id %>/edit">Edit Bee</a>
+<%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>
