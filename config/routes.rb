@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get '/bees/:id/edit' => 'bees#edit'
   patch '/bees/:id' => 'bees#update'
 
-  delete '/bees:id' => 'bees#destroy'
+  delete '/bees/:id' => 'bees#destroy'
 end

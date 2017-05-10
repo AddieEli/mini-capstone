@@ -1,10 +1,4 @@
 class BeesController < ApplicationController
- 
-  def all_bees
-   @bee = Bee.all
-  
-   render 'bee.html.erb' 
-  end 
 
   def index
     @bees = Bee.all
@@ -25,7 +19,8 @@ class BeesController < ApplicationController
                     description: params[:description]
                     )
       bee.save
-      redirect_to "/bees/#{bee.id}"
+      flash[:success] = "Bee Item Created"
+      redirect_to "/bees/#{ bee.id}"
   end 
 
   def edit
@@ -41,7 +36,7 @@ class BeesController < ApplicationController
                       description: params[:description]
         )
       bee.save
-      flash[:success] = "Bee item Successfully Created"
+      flash[:success] = "Bee item Successfully Updated"
       redirect_to "/bees/#{bee.id}"
     end 
 
