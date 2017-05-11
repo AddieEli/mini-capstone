@@ -1,10 +1,10 @@
 class Bee < ApplicationRecord
   
   def sale_message
-    sale_message = ""
-    if price < 20 
-        sale_message ="Sale!"
-    else sale_message = "Everyday Value"
+    if discounted?
+       "Sale!"
+    else 
+      "Everyday Value"
     end
   end
 
@@ -17,5 +17,8 @@ class Bee < ApplicationRecord
      total = price + tax
   end
 
+  def discounted?
+    price < 20
+  end
 
 end
