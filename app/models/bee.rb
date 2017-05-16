@@ -1,4 +1,5 @@
 class Bee < ApplicationRecord
+  belongs_to :supplier
   
   def sale_message
     if discounted?
@@ -17,8 +18,13 @@ class Bee < ApplicationRecord
      total = price + tax
   end
 
+  def discount_value
+    15.00
+  end 
+
   def discounted?
-    price < 20
-  end
+      price < 20
+    end 
+
 
 end

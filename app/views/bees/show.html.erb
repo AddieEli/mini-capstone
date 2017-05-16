@@ -10,7 +10,7 @@
   <h4> <%= @bee.description %> </h4>
 
   
-
+<h5>Supplier Name: <%= @bee.supplier.name %> </h5>
 
 <% link_to "Edit Bee", "/bees/#{ @bee.id}/edit" %>
 <%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>

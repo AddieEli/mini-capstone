@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   patch '/bees/:id' => 'bees#update'
 
   delete '/bees/:id' => 'bees#destroy'
+
+  get '/random' => 'bees#random'
 end
