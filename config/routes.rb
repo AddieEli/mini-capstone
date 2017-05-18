@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   delete '/bees/:id' => 'bees#destroy'
 
   get '/random' => 'bees#random'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 end

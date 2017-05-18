@@ -35,7 +35,8 @@ class BeesController < ApplicationController
       bee = Bee.new(
                     name: params[:name],
                     price: params[:price],
-                    description: params[:description]
+                    description: params[:description],
+                    supplier_id: params[:supplier]
                     )
       bee.save
       flash[:success] = "Bee Item Created"
@@ -51,8 +52,9 @@ class BeesController < ApplicationController
       bee.assign_attributes(
                       name: params[:name],
                       price: params[:price],
-                      image: params[:image],
-                      description: params[:description]
+                      description: params[:description],
+                      supplier_id: params[:supplier]
+                     
         )
       bee.save
       flash[:success] = "Bee item Successfully Updated"

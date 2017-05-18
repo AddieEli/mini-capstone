@@ -9,6 +9,9 @@
 
   <h4> <%= @bee.description %> </h4>
 
+<% @bee.images.each do |image| %>
+ <img src=" <%= image.url %>" alt =" <%= image.name %>">
+<% end %>
   
 <h5>Supplier Name: <%= @bee.supplier.name %> </h5>
 
