@@ -1,5 +1,4 @@
  
-
  <h1> <%= @bee.name %> </h1>
 
  <p class="<%= "red-price" if @bee.discounted? %>"> Price: <%= number_to_currency(@bee.price) %> </p>
@@ -17,3 +16,15 @@
 
 <% link_to "Edit Bee", "/bees/#{ @bee.id}/edit" %>
 <%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>
+
+<%= form_tag "/orders", method: :post do %>
+<div>
+    <%= label_tag :bee_id %>
+    <%= text_field_tag :bee_id %>
+
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity %>
+
+  <%= submit_tag  "Buy Now!"%>
+  </div>
+  <% end %> 

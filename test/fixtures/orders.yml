@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bee_id: 1
+  user_id: 
+  quantity: 1
+  subtotal: 9.99
+  tax: 
+  total: 9.99
+
+two:
+  bee_id: 1
+  user_id: 
+  quantity: 1
+  subtotal: 9.99
+  tax: 
+  total: 9.99
