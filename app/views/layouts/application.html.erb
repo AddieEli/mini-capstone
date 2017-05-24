@@ -63,9 +63,15 @@
             <ul class="dropdown-menu">
               <li><a href="/bees?sort=price">Price low to high</a></li>
               <li><a href="/bees?sort=price&sort_order=desc">Price high to low</a></li>
-              <li><a href="#">Something else here</a></li>
+
+              <% Category.all.each do |category| %>
+                  <li><a href="/bees?category=<%= category.name %>"><%= category.name.titleize %></a></li>
+                  <% end %>
+              
+
+              <li><a href="#">Line name</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#">other name</a></li>
             </ul>
           </li>
         </ul>

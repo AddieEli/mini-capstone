@@ -40,12 +40,22 @@
 # bee.save
 
 
-Image.create!([
-              {
-                name: "",
-                url: "",
-                bee_id: 
-              }
+# Image.create!([
+#               {
+#                 name: "",
+#                 url: "",
+#                 bee_id: 
+#               }
 
-  ])
+#   ])
+
+CategoryBee.create!([
+                        {category_id: 1, bee_id: 1},
+                        {category_id: 1, bee_id: 2},
+                        {category_id: 2, bee_id: 2},
+                        {category_id: 2, bee_id: 3},
+                        {category_id: 3, bee_id: 1},
+                        {category_id: 3, bee_id: 2},
+                        {category_id: 3, bee_id: 3}
+                        ])
 

@@ -1,7 +1,13 @@
 class Bee < ApplicationRecord
   belongs_to :supplier
   has_many :images
-  has_many :orders
+  
+  
+  has_many :category_bees
+  has_many :categories, through: :category_bees
+
+  has_many :carted_products
+  has_many :orders, through: :carted_products
   
   def sale_message
     if discounted?
@@ -36,6 +42,7 @@ class Bee < ApplicationRecord
       image_collection.first.url
     end 
   end
+
 
 
 end

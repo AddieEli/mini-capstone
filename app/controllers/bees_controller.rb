@@ -6,10 +6,15 @@ class BeesController < ApplicationController
     sort_order = params[:sort_order]
     discount = params[:discount]
     search_term = params[:search_term]
+    category = params[:category]
 
     if search_term
       @bees = Bee.where("name iLIKE ? OR description iLIKE ?", "%#{search_term}%", "%#{search_term}%")
     end
+
+    if category
+      @bees = Category.find_by(name: category).bees
+    end 
 
     if discount
       @bees = @bees.where("price < ?", discount)
@@ -64,7 +69,7 @@ class BeesController < ApplicationController
     def destroy
       bee = Bee.find(params[:id])
       bee.destroy
-      flash[:warning] = "Recipe Destroyed"
+      flash[:warning] = "Item Destroyed"
       redirect_to "/"
     end
 

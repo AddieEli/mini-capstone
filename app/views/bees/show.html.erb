@@ -14,17 +14,26 @@
   
 <h5>Supplier Name: <%= @bee.supplier.name %> </h5>
 
+<div>
+<h5>Category Type:</h5><% @bee.categories.each do |bee| %>
+    <%= bee.name %>
+    <%= "-" %>
+    <% end %>
+</div>
+
+<div>
 <% link_to "Edit Bee", "/bees/#{ @bee.id}/edit" %>
 <%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>
+</div>
 
-<%= form_tag "/orders", method: :post do %>
-<div>
-    <%= label_tag :bee_id %>
-    <%= text_field_tag :bee_id %>
+<%= form_tag '/cart', method: :post do %>
 
+  <%= hidden_field_tag :bee_id, @bee.id %>
+
+
+  <div>
     <%= label_tag :quantity %>
-    <%= text_field_tag :quantity %>
-
-  <%= submit_tag  "Buy Now!"%>
+    <%= text_field_tag :quantity%>
   </div>
+  <%= submit_tag  "Add to Cart", class: "btn btn-primary"%>
   <% end %> 
