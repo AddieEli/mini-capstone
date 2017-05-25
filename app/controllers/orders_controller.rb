@@ -1,25 +1,33 @@
 class OrdersController < ApplicationController
 
-  def create
-    @bee = Bee.find(params[:bee_id])
+  def create 
+    carted_products = current_user.cart
+
+    subtotal = 0
+    carted_products.each do |carted_product|
+      subtotal += carted_product.price * carted_product.quantity
+    end 
+
+    tax = subtotal * 0.09
+    total = subtotal + tax
+
+
     order = Order.new(
-                      quantity: params[:quantity],
-                      bee_id: params[:bee_id],
-                      user_id: current_user.id
+                      user_id: current_user.id,
+                      subtotal: subtotal,
+                      tax: tax,
+                      total: total
                       )
-                      
-                      order.calculate_subtotal
-                      order.calculate_tax
-                      order.calculate_total
                     
         order.save
+
+        carted_products.update_all(status: "purchased", order_id: order.id ) 
+
         redirect_to "/orders/#{order.id}"
   end
 
   def show
       @order = Order.find(params[:id])
-      @bee = Bee.find(@order.bee_id)
   end
-      
-  
+
 end

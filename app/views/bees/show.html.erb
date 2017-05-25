@@ -26,7 +26,7 @@
 <%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>
 </div>
 
-<%= form_tag '/cart', method: :post do %>
+<%= form_tag '/carted_products', method: :post do %>
 
   <%= hidden_field_tag :bee_id, @bee.id %>
 

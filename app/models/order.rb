@@ -4,16 +4,16 @@ class Order < ApplicationRecord
   has_many :carted_products
   has_many :bees, through: :carted_products
 
-    def calculate_subtotal
-      self.subtotal = bee.price * quantity
-    end 
 
-    def calculate_tax
-      self.tax = subtotal * 0.09
-    end 
+    #   self.subtotal = bee.price * quantity
+    # end 
 
-    def calculate_total
-     self.total = subtotal + tax
-    end 
+    # def calculate_tax
+    #   self.tax = subtotal * 0.09
+    # end 
 
+    # def calculate_total
+    #  self.total = subtotal + tax
+    # end 
+ 
 end
