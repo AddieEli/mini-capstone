@@ -21,9 +21,11 @@
     <% end %>
 </div>
 
-<div>
-<% link_to "Edit Bee", "/bees/#{ @bee.id}/edit" %>
+<div> 
+  <% if admin_signed_in? %>
+<% link_to "Edit Bee", "/bees/#{ @bee.id}/edit" , "btn btn-primary" %>
 <%= link_to "Delete", "/bees/#{ @bee.id }", method: :delete %>
+<% end %>
 </div>
 
 <%= form_tag '/carted_products', method: :post do %>

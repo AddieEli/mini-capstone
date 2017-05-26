@@ -1,8 +1,11 @@
 <h1> What bee stuff are you selling? </h1>
+  <% @bee.errors.full_messages.each do |error| %>
+  <h2> <%= error %> </h2>
+  <% end %>
 
 <%= form_tag "/bees", method: :post do %>
   <div>
-     Name: <input type="text" name="name" >
+     Name: <input type="text" name="name" value="<%= @bee.name %>">
  </div>
  <div>
       Supplier: 
@@ -10,10 +13,10 @@
   </div>
 
   <div>
-     Price: <input type="text" name="price" >
+     Price: <input type="text" name="price" value="<%= @bee.price %>">
   </div>
   <div>
-     Description: <input type="text" name="description">
+     Description: <input type="text" name="description" value="<%= @bee.description %>">
   </div>
   <input type="submit" value="New Bee">
 

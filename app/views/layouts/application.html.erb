@@ -41,14 +41,12 @@
              <% else %>
                 <li><a href="/signup">Sign Up</a></li>
                 <li><a href="/login">Log In</a></li>
-                <li><a href=“/carted_products”><span class=“glyphicon glyphicon-shopping-cart”></span> Shopping Cart </a></li>
+                <li><a href=“/carted_products”><span class=“glyphicon glyphicon-shopping-cart”></span> Shopping Cart ( <%= @cart_count %> ) </a></li>
              <% end %>
 
             </ul>
           </li>
         </ul>
-
-
 
 <form action=“/bees” method=“get” class=“navbar-form navbar-left”>
         <div class=“form-group”>
@@ -72,7 +70,7 @@
 
               <li><a href="#">Line name</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#">other name</a></li>
+              <li><a href="/bees/new">Add New Sale</a></li>
             </ul>
           </li>
         </ul>

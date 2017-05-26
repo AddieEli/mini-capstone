@@ -1,4 +1,5 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
 
 def index
 
@@ -11,15 +12,15 @@ def index
 end 
 
 def create
-cart = CartedProduct.new(
+carted_product = CartedProduct.new(
                     user_id: current_user.id,
                     bee_id: params[:bee_id],
                     quantity: params[:quantity],
                     status: "carted"
                     )
-        cart.save
+        carted_product.save
         flash[:success] = "Item added to Cart"
-        redirect_to '/carted_products'
+        redirect_to "/carted_products"
 end 
 
 def destroy
